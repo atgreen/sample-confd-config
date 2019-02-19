@@ -4,4 +4,9 @@ dest = "/tmp/dyndns.sh"
 keys = [
   "/dyndns/ip"
 ]
+
+# Don't run the first time.  We just want to capture changes.
+check_cmd = "if ! [ -f {{.src}}.run ]; then touch {{.src}}.run; exit 1; fi"
+
+# Run our script.
 reload_cmd = "source /tmp/dyndns.sh"
