@@ -1,0 +1,7 @@
+[template]
+src = "dyndns.sh.tmpl"
+dest = "/tmp/dyndns.sh"
+keys = [
+  "/dyndns/ip"
+]
+

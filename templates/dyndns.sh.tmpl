@@ -1,0 +1,8 @@
+#!/bin/sh
+
+curl -u ${TOWER_CREDS} \
+     https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/dyndns/launch?ip={{ getv "/dyndns/ip" }}
+
+
+
+
