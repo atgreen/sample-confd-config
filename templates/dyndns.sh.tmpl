@@ -1,15 +1,5 @@
 #!/bin/sh
 
-set -x
-
-env
-
-# Exit early the first time through.  We only want to capture changes.
-if ! [ -f ${HOME}/dyndns.sh.run ]; then
-    touch ${HOME}/dyndns.sh.run;
-    exit;
-fi    
-
 curl -u user:password \
      https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/dyndns/launch?ip={{ getv "/dyndns/ip" }}
 
