@@ -4,4 +4,4 @@ dest = "/tmp/dyndns.sh"
 keys = [
   "/dyndns/ip"
 ]
-
+reload_cmd = "source /tmp/dyndns.sh"
