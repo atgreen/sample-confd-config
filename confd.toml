@@ -1,5 +1,4 @@
 backend = "etcd"
-confdir = "/etc/confd"
 log-level = "debug"
 interval = 600
 nodes = [
