@@ -1,7 +1,5 @@
 backend = "etcd"
 log-level = "debug"
-interval = 60
 nodes = [
   "https://etcd2-labdroid.apps.home.labdroid.net"
 ]
-scheme = "https"
