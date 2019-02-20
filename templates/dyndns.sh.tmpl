@@ -14,7 +14,7 @@ fi
 curl -s -u ${TOWER_USER}:${TOWER_PASSWORD} \
      -H 'Content-Type: application/json' \
      -XPOST \
-     -d '{"extra_vars": "{\"ip\": \"{{ ip }}\"}"}' \
+     -d '{"extra_vars": "{\"ip\": \"{{ getv "/dyndns/ip" }}\"}"}' \
      https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/demo-dyndns/launch/
 
 
