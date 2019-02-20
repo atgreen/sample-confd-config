@@ -1,5 +1,15 @@
 #!/bin/sh
 
-curl -u user:password \
-     https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/dyndns/launch?ip={{ getv "/dyndns/ip" }}
+if [ "x${TOWER_USER}" -eq "x" ]; then
+    echo ERROR: TOWER_USER environment variable undefined.
+    exit 1
+fi
+
+if [ "x${TOWER_PASSWORD}" -eq "x" ]; then
+    echo ERROR: TOWER_PASSWORD environment variable undefined.
+    exit 1
+fi
+
+curl -u ${TOWER_USER}:${TOWER_PASSWORD} \
+     https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/labdroid-dynamic-dns/launch?ip={{ getv "/dyndns/ip" }}
 
