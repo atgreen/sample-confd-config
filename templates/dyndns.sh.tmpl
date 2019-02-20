@@ -10,6 +10,12 @@ if [ "x${TOWER_PASSWORD}" == "x" ]; then
     exit 1
 fi
 
+# Invoke the demo-dyndns application template with extra_vars...
 curl -s -u ${TOWER_USER}:${TOWER_PASSWORD} \
-     https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/labdroid-dynamic-dns/launch/?ip={{ getv "/dyndns/ip" }}
+     -H 'Content-Type: application/json' \
+     -XPOST \
+     -d '{"extra_vars": "{\"ip\": \"{{ ip }}\"}"}' \
+     https://ansible-tower-web-svc-tower.apps.home.labdroid.net/api/v2/job_templates/demo-dyndns/launch/
+
+
 
