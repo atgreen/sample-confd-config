@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [ "x${TOWER_USER}" -eq "x" ]; then
+if [ "x${TOWER_USER}" == "x" ]; then
     echo ERROR: TOWER_USER environment variable undefined.
     exit 1
 fi
 
-if [ "x${TOWER_PASSWORD}" -eq "x" ]; then
+if [ "x${TOWER_PASSWORD}" == "x" ]; then
     echo ERROR: TOWER_PASSWORD environment variable undefined.
     exit 1
 fi
